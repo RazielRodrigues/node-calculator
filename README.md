@@ -1,1 +1,3 @@
-# node-calculator
+# A NODE.JS CLI CALCULATOR PROJECT
+
+...
