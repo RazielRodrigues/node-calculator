@@ -21,13 +21,25 @@ describe("Suite de testes principal", () => {
         assert.deepEqual(calculator.divide(), 0.5);
     })
 
-    it("Should return error", () => {
+})
+
+describe("Suite de erros principal", () => {
+
+    it("Should return error undefined first number", () => {
         try {
-            calculator.firstNumber = 0;
-            calculator.secondNumber = 0;
+            const calculator = new Calculator(undefined, 2);
         } catch (error) {
-            assert.deepEqual(error, 'You must pass a first number!');
-            assert.deepEqual(error, 'You must pass a second number!');
+            assert.deepEqual(error instanceof Error, true);
+            assert.equal(error.message, 'You must pass a first number!');
+        }
+    })
+
+    it("Should return error undefined second number", () => {
+        try {
+            const calculator = new Calculator(2, undefined);
+        } catch (error) {
+            assert.deepEqual(error instanceof Error, true);
+            assert.equal(error.message, 'You must pass a second number!');
         }
     })
 

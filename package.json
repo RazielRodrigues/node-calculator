@@ -4,7 +4,9 @@
   "description": "...",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*.js"
+    "test": "npx mocha --parallel --exit test/",
+    "test:dev": "npx mocha test/ -w",
+    "test:cov": "npx nyc --reporter=html npm test"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,8 @@
   },
   "homepage": "https://github.com/RazielMiranda/node-calculator#readme",
   "dependencies": {
-    "commander": "^9.3.0"
+    "commander": "^9.3.0",
+    "nyc": "^15.1.0"
   },
   "devDependencies": {
     "mocha": "^10.0.0"
